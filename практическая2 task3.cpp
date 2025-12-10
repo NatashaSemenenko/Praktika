@@ -18,7 +18,7 @@ int main() {
 
     auto start = std::chrono::high_resolution_clock::now();
 
-    std::cout << "Ãåíåðàöèÿ è ñ÷¸ò÷èêâåêòîðà " << VECTOR_SIZE << " ýëåìåíòû..." << std::endl;
+    std::cout << "ÃƒÃ¥Ã­Ã¥Ã°Ã Ã¶Ã¨Ã¿ Ã¨ Ã±Ã·Â¸Ã²Ã·Ã¨ÃªÃ¢Ã¥ÃªÃ²Ã®Ã°Ã  " << VECTOR_SIZE << " Ã½Ã«Ã¥Ã¬Ã¥Ã­Ã²Ã»..." << std::endl;
     std::vector<int>data(VECTOR_SIZE);
 
     for (int i = 0; i < VECTOR_SIZE; ++i) {
@@ -26,7 +26,7 @@ int main() {
     }
     std::sort(data.begin(), data.end());
 
-    std::cout << "Âû÷èñëåíèå ïðîñòûõ÷èñåë ñ òî÷íîñòüþ äî " << PRIME_LIMIT << "..." << std::endl;
+    std::cout << "Ã‚Ã»Ã·Ã¨Ã±Ã«Ã¥Ã­Ã¨Ã¥ Ã¯Ã°Ã®Ã±Ã²Ã»ÃµÃ·Ã¨Ã±Ã¥Ã« Ã± Ã²Ã®Ã·Ã­Ã®Ã±Ã²Ã¼Ã¾ Ã¤Ã® " << PRIME_LIMIT << "..." << std::endl;
     int primeCount = 0;
     for (int i = 0; i < PRIME_LIMIT; ++i) {
         if (isPrime(i)) {
@@ -35,10 +35,10 @@ int main() {
     }
     auto end = std::chrono::high_resolution_clock::now();
     std::chrono::duration<double>elapsed = end - start;
-    std::cout << "\n--- Ðåçóëüòàò---" << std::endl;
-    std::cout << "Íàèìåíüøèé ýëåìåíò: " << data[0] << std::endl;
-    std::cout << "Íàèáîëüøèé ýëåìåíò: " << data[VECTOR_SIZE - 1] << std::endl;
-    std::cout << "Íàéäåííûå ïðîñòûå ÷èñëà: " << primeCount << std::endl;
-    std::cout << "Îáùåå âðåìÿ âûïîëíåíèÿ: " << elapsed.count() << " ñåêóíä" << std::endl;
+    std::cout << "\n--- ÃÃ¥Ã§Ã³Ã«Ã¼Ã²Ã Ã²---" << std::endl;
+    std::cout << "ÃÃ Ã¨Ã¬Ã¥Ã­Ã¼Ã¸Ã¨Ã© Ã½Ã«Ã¥Ã¬Ã¥Ã­Ã²: " << data[0] << std::endl;
+    std::cout << "ÃÃ Ã¨Ã¡Ã®Ã«Ã¼Ã¸Ã¨Ã© Ã½Ã«Ã¥Ã¬Ã¥Ã­Ã²: " << data[VECTOR_SIZE - 1] << std::endl;
+    std::cout << "ÃÃ Ã©Ã¤Ã¥Ã­Ã­Ã»Ã¥ Ã¯Ã°Ã®Ã±Ã²Ã»Ã¥ Ã·Ã¨Ã±Ã«Ã : " << primeCount << std::endl;
+    std::cout << "ÃŽÃ¡Ã¹Ã¥Ã¥ Ã¢Ã°Ã¥Ã¬Ã¿ Ã¢Ã»Ã¯Ã®Ã«Ã­Ã¥Ã­Ã¨Ã¿: " << elapsed.count() << " Ã±Ã¥ÃªÃ³Ã­Ã¤" << std::endl;
     return 0;
 }
