@@ -1,43 +1,43 @@
-#include <iostream>  // Для ввода-вывода (std::cout, std::cin)
-#include <iomanip>   // Для форматирования вывода (std::setprecision, std::fixed)
-#include <clocale>   // Для setlocale и LC_ALL
+#include <iostream>  // Р”Р»СЏ РІРІРѕРґР°-РІС‹РІРѕРґР° (std::cout, std::cin)
+#include <iomanip>   // Р”Р»СЏ С„РѕСЂРјР°С‚РёСЂРѕРІР°РЅРёСЏ РІС‹РІРѕРґР° (std::setprecision, std::fixed)
+#include <clocale>   // Р”Р»СЏ setlocale Рё LC_ALL
 
-// Функция для вычисления площади круга
+// Р¤СѓРЅРєС†РёСЏ РґР»СЏ РІС‹С‡РёСЃР»РµРЅРёСЏ РїР»РѕС‰Р°РґРё РєСЂСѓРіР°
 double calculateCircleArea(double radius)
 {
-    // Определяем константу PI с высокой точностью
+    // РћРїСЂРµРґРµР»СЏРµРј РєРѕРЅСЃС‚Р°РЅС‚Сѓ PI СЃ РІС‹СЃРѕРєРѕР№ С‚РѕС‡РЅРѕСЃС‚СЊСЋ
     const double PI = 3.14159265358979323846;
-    // Формула: S = ? * r?
+    // Р¤РѕСЂРјСѓР»Р°: S = ПЂ * rВІ
     return PI * radius * radius;
 }
 
 int main()
 {
-    // Настройка вывода для поддержки кириллицы (в Windows может потребоваться)
+    // РќР°СЃС‚СЂРѕР№РєР° РІС‹РІРѕРґР° РґР»СЏ РїРѕРґРґРµСЂР¶РєРё РєРёСЂРёР»Р»РёС†С‹
     setlocale(LC_ALL, "Russian");
 
-    // --- Тест 1: Ввод пользователя ---
+    // Р’РІРѕРґ РїРѕР»СЊР·РѕРІР°С‚РµР»СЏ
     double radius;
-    std::cout << "Введите радиус круга: ";
+    std::cout << "Р’РІРµРґРёС‚Рµ СЂР°РґРёСѓСЃ РєСЂСѓРіР°: ";
     std::cin >> radius;
 
     if (radius < 0) {
-        std::cout << "Ошибка! Радиус не может быть отрицательным!" << std::endl;
+        std::cout << "РћС€РёР±РєР°! Р Р°РґРёСѓСЃ РЅРµ РјРѕР¶РµС‚ Р±С‹С‚СЊ РѕС‚СЂРёС†Р°С‚РµР»СЊРЅС‹Рј!" << std::endl;
     }
     else {
         double area = calculateCircleArea(radius);
-        // Выводим результат (fixed и setprecision(2) оставляют 2 знака после запятой)
+        // Р’С‹РІРѕРґРёРј СЂРµР·СѓР»СЊС‚Р°С‚ (fixed Рё setprecision(2) РѕСЃС‚Р°РІР»СЏСЋС‚ 2 Р·РЅР°РєР° РїРѕСЃР»Рµ Р·Р°РїСЏС‚РѕР№)
         std::cout << std::fixed << std::setprecision(2);
-        std::cout << "Площадь круга = " << area << std::endl;
+        std::cout << "РџР»РѕС‰Р°РґСЊ РєСЂСѓРіР° = " << area << std::endl;
     }
 
     std::cout << std::fixed << std::setprecision(2);
-    std::cout << "Тестовые значения: " << std::endl;
+    std::cout << "РўРµСЃС‚РѕРІС‹Рµ Р·РЅР°С‡РµРЅРёСЏ: " << std::endl;
 
-    //Тестирование
-    std::cout << "Радиус = 4: Площадь = " << calculateCircleArea(4) << std::endl;
-    std::cout << "Радиус = 7: Площадь = " << calculateCircleArea(7) << std::endl;
-    std::cout << "Радиус = 11: Площадь = " << calculateCircleArea(11) << std::endl;
+    //РўРµСЃС‚РёСЂРѕРІР°РЅРёРµ
+    std::cout << "Р Р°РґРёСѓСЃ = 4: РџР»РѕС‰Р°РґСЊ = " << calculateCircleArea(4) << std::endl;
+    std::cout << "Р Р°РґРёСѓСЃ = 7: РџР»РѕС‰Р°РґСЊ = " << calculateCircleArea(7) << std::endl;
+    std::cout << "Р Р°РґРёСѓСЃ = 11: РџР»РѕС‰Р°РґСЊ = " << calculateCircleArea(11) << std::endl;
 
     return 0;
 }
